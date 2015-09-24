@@ -1,4 +1,41 @@
-module.exports = {
+# normae-lint-html
+
+normae-lint-html是适用于[normae](https://github.com/Lagou-Frontend/normae)的html静态代码检查插件，在[htmllint](https://github.com/htmllint/htmllint)的基础上配置扩展而成，代码规范依据于拉勾网前端的[Code Guide](https://github.com/Lagou-Frontend/Code-Guide)。
+
+## 使用
+fis.conf.js
+
+```javascript
+fis.match('*.html', {
+    lint: fis.plugin('html')
+});
+```
+shell
+
+```shell
+$ normae release -l
+```
+
+## 参数
+
+### interrupt
+* 表示在lint过程中检查到不合法的代码时，是否立即退出程序，停止release
+* 默认值为false
+
+```javascript
+fis.match('*.html', {
+    lint: fis.plugin('html', {
+        interrupt: true
+    });
+});
+```
+
+### sets
+* 表示lint检查的rule
+* 默认值为
+
+ ```javascript
+ {
      // htmllint default rule
     'indent-style': 'spaces',        // 缩进需使用空格
     'indent-width': 4,               // 缩进需4个空格的长度
@@ -21,3 +58,16 @@ module.exports = {
     'button-req-type': true,         // button标签需要type属性，且值不能为空
     'form-req-method-post': true     // form标签需要method属性，且值为post
 };
+ ```
+ 
+* 如果想修改以上htmllint默认的rule，请传入对应的rule和值以覆盖默认值，具体可以参考htmllint的[文档](https://github.com/htmllint/htmllint/wiki/Options)；如果想修改normae-lint-html自定义的rule，请传入对应的rule和false值以覆盖默认值，但是基本上不建议做修改。
+
+```javascript
+fis.match('*.html', {
+    lint: fis.plugin('html', {
+        sets: {
+            'tag-self-close': false
+        }
+    });
+});
+```
