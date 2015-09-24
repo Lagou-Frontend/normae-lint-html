@@ -1,0 +1,28 @@
+{
+    "name": "normae-lint-html",
+    "version": "0.0.1",
+    "description": "A lint plugin for normae to validate html.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Lagou-Frontend/normae-lint-html"
+    },
+    "bugs": {
+        "url": "https://github.com/Lagou-Frontend/normae-lint-html/issues"
+    },
+    "homepage": "https://github.com/Lagou-Frontend",
+    "dependencies": {
+        "bulk-require": "^0.2.1",
+        "htmllint": "^0.2.6"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "htmllint",
+        "normae",
+        "fis3"
+    ],
+    "author": "vic",
+    "license": "ISC"
+}
