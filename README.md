@@ -21,13 +21,13 @@ $ normae release -l
 ### interrupt
 * 表示在lint过程中检查到不合法的代码时，是否立即退出程序，停止release
 * 默认值为false
-
-```javascript
-fis.match('*.html', {
-    lint: fis.plugin('html', {
-        interrupt: true
-    });
-});
+	
+	```javascript
+	fis.match('*.html', {
+	    lint: fis.plugin('html', {
+	        interrupt: true
+	    });
+	});
 ```
 
 ### sets
@@ -62,12 +62,19 @@ fis.match('*.html', {
  
 * 如果想修改以上htmllint默认的rule，请传入对应的rule和值以覆盖默认值，具体可以参考htmllint的[文档](https://github.com/htmllint/htmllint/wiki/Options)；如果想修改normae-lint-html自定义的rule，请传入对应的rule和false值以覆盖默认值，但是基本上不建议做修改。
 
-```javascript
-fis.match('*.html', {
-    lint: fis.plugin('html', {
-        sets: {
-            'tag-self-close': false
-        }
-    });
-});
-```
+	```javascript
+	fis.match('*.html', {
+	    lint: fis.plugin('html', {
+	        sets: {
+	            'tag-self-close': false
+	        }
+	    });
+	});
+	```
+* 支持在html中通过内联语法来跳过某些rule的检查
+
+	```html
+	<!-- htmllint form-req-method-post="false" -->
+   <form></form>
+	```
+	具体使用方法可以参考[htmllint文档](https://github.com/htmllint/htmllint/wiki/Inline-Configurations)，建议除非特殊情况，不要添加过多的这种跳过rule检查的代码。
