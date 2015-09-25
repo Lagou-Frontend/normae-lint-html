@@ -3,7 +3,7 @@
 normae-lint-html是适用于[normae](https://github.com/Lagou-Frontend/normae)的html静态代码检查插件，在[htmllint](https://github.com/htmllint/htmllint)的基础上配置扩展而成，代码规范依据于拉勾网前端的[Code Guide](https://github.com/Lagou-Frontend/Code-Guide)。
 
 ## 使用
-fis.conf.js
+fis-conf.js
 
 ```javascript
 fis.match('*.html', {
